@@ -1,0 +1,373 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  width: 100%; }
+  body header {
+    width: 100%;
+    height: 84vh;
+    background-image: url("../img/fondo_index.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; }
+    body header nav {
+      height: 100px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      body header nav #Logo_Image {
+        width: 100px;
+        height: 100px;
+        margin-left: 14px;
+        margin-top: 25px; }
+        body header nav #Logo_Image a {
+          text-decoration: none; }
+          body header nav #Logo_Image a img {
+            width: 50px;
+            height: 50px; }
+      body header nav ul {
+        display: flex;
+        flex-direction: row; }
+        body header nav ul li {
+          list-style: none;
+          margin: 0 14px; }
+          body header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+            font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; }
+        body header nav ul li:hover a {
+          text-decoration: underline; }
+      body header nav #btn_nav {
+        display: flex;
+        flex-direction: row; }
+        body header nav #btn_nav button {
+          width: 100px;
+          height: 38px;
+          margin-right: 14px;
+          border-radius: 25px;
+          font-size: medium;
+          font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+          border: none; }
+        body header nav #btn_nav button:hover {
+          box-shadow: 4px 6px 4px #585757;
+          color: #292929; }
+        body header nav #btn_nav #list_nav {
+          width: 33px;
+          display: none;
+          justify-content: center;
+          align-items: center; }
+          body header nav #btn_nav #list_nav svg {
+            width: 60%;
+            height: 60%; }
+    body header #Message_Index {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px; }
+      body header #Message_Index #message_h1 {
+        width: 60%;
+        height: 50px;
+        font-size: xx-large;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        margin: 14px 0;
+        text-align: center; }
+      body header #Message_Index #message_h3 {
+        width: 62%;
+        height: 30%;
+        font-family: sans-serif;
+        text-align: center;
+        margin-top: 65px;
+        font-size: large; }
+      body header #Message_Index #Btns {
+        margin-top: 65px;
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; }
+        body header #Message_Index #Btns button {
+          width: 350px;
+          height: 60px;
+          border-radius: 50px;
+          margin: 0 12px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: larger;
+          text-align: center;
+          border: none; }
+          body header #Message_Index #Btns button svg {
+            width: 20px;
+            height: 20px;
+            margin: auto 0; }
+        body header #Message_Index #Btns #btn_download:hover {
+          box-shadow: 2px 4px 2px #6d6b6b; }
+        body header #Message_Index #Btns #btn_Nav {
+          background-color: #665c5c;
+          color: #f1f1f1; }
+        body header #Message_Index #Btns #btn_Nav:hover {
+          box-shadow: 2px 4px 2px #ffffff62; }
+  body main {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+    body main section {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center; }
+    body main #section_A #img-channels img {
+      width: 500px;
+      height: 300px; }
+    body main #section_A #message-channels {
+      width: 500px;
+      height: 400px; }
+      body main #section_A #message-channels h1 {
+        font-size: 35px;
+        margin: 20px 0;
+        font-family: sans-serif;
+        width: 70%; }
+      body main #section_A #message-channels h4 {
+        font-size: 17px;
+        width: 70%;
+        font-family: "Courier New", Courier, monospace;
+        color: #6b6b6b; }
+    body main #section_B #img-channels-voice img {
+      width: 500px;
+      height: 400px; }
+    body main #section_B #message-channels-voice {
+      width: 500px;
+      height: 400px; }
+      body main #section_B #message-channels-voice h1 {
+        font-size: 35px;
+        margin: 20px 0;
+        font-family: sans-serif;
+        width: 70%; }
+      body main #section_B #message-channels-voice h4 {
+        font-size: 17px;
+        width: 70%;
+        font-family: "Courier New", Courier, monospace;
+        color: #6b6b6b; }
+    body main #section_C #img-perfil img {
+      width: 400px;
+      height: 400px; }
+    body main #section_C #message-perfil {
+      width: 500px;
+      height: 400px; }
+      body main #section_C #message-perfil h1 {
+        font-size: 35px;
+        margin: 20px 0;
+        font-family: sans-serif;
+        width: 70%; }
+      body main #section_C #message-perfil h4 {
+        font-size: 17px;
+        width: 70%;
+        font-family: "Courier New", Courier, monospace;
+        color: #6b6b6b; }
+    body main #section_D {
+      height: 200vh;
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-around; }
+      body main #section_D #message_chatbox {
+        width: 95%;
+        height: 200px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px; }
+        body main #section_D #message_chatbox h1 {
+          font-size: 35px;
+          margin: 20px 0;
+          font-family: sans-serif;
+          width: 85%; }
+        body main #section_D #message_chatbox h4 {
+          font-size: 17px;
+          width: 90%;
+          font-family: "Courier New", Courier, monospace;
+          color: #6b6b6b; }
+      body main #section_D #image-videocall {
+        width: 100%;
+        height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        body main #section_D #image-videocall img {
+          width: 80%;
+          height: 100%; }
+      body main #section_D #message-download {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px; }
+        body main #section_D #message-download h2 {
+          font-family: sans-serif;
+          font-size: 30px; }
+        body main #section_D #message-download button {
+          width: 300px;
+          height: 60px;
+          border-radius: 25px;
+          font-size: 100%;
+          margin-top: 25px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          background-color: black; }
+          body main #section_D #message-download button svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px; }
+        body main #section_D #message-download button:hover {
+          box-shadow: 4px 6px 4px #585757; }
+  body footer {
+    height: 85vh;
+    width: 100%;
+    background-color: #383838;
+    display: flex;
+    flex-direction: column; }
+    body footer #Info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 80%; }
+      body footer #Info #lang-social {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: 30%;
+        height: 100%; }
+        body footer #Info #lang-social select {
+          margin-top: 20%;
+          width: 200px;
+          height: 25px;
+          margin-left: 25%;
+          background-color: #383838;
+          border: none;
+          color: white; }
+          body footer #Info #lang-social select option {
+            background-image: none; }
+        body footer #Info #lang-social #lang option[data-image] {
+          padding-left: 24px;
+          background-repeat: no-repeat;
+          background-position: 3px 50%; }
+        body footer #Info #lang-social #lang option[value="esp"][data-image] {
+          background-image: url("../static/img/flags/espana.png"); }
+        body footer #Info #lang-social #lang option[value="eng"][data-image] {
+          background-image: url("../static/img/flags/reino-unido.png"); }
+        body footer #Info #lang-social ul {
+          display: flex;
+          flex-direction: row;
+          margin-top: 45px;
+          margin-left: 22%;
+          list-style: none; }
+          body footer #Info #lang-social ul li {
+            margin: 0 12px; }
+            body footer #Info #lang-social ul li a {
+              text-decoration: none;
+              color: white; }
+              body footer #Info #lang-social ul li a .svg-icon {
+                width: 24px;
+                height: 24px;
+                fill: #FF0000; }
+      body footer #Info #data-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 70%;
+        height: 100%; }
+        body footer #Info #data-info ul {
+          margin-top: 7%;
+          width: 200px;
+          list-style: none; }
+          body footer #Info #data-info ul span {
+            color: #fc9d44;
+            margin: 15px 0; }
+          body footer #Info #data-info ul li {
+            margin: 15px 0; }
+            body footer #Info #data-info ul li a {
+              text-decoration: none;
+              color: white; }
+          body footer #Info #data-info ul li:hover a {
+            text-decoration: underline; }
+    body footer #nav_footer {
+      width: 80%;
+      height: 20%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      border-top: #fc9d44 2px solid; }
+      body footer #nav_footer #logo_image_footer a img {
+        width: 50px;
+        height: 50px; }
+      body footer #nav_footer #btn-register button {
+        width: 100px;
+        height: 38px;
+        border-radius: 25px;
+        font-size: small;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        border: none; }
+      body footer #nav_footer #btn-register button:hover {
+        box-shadow: 4px 6px 4px #585757;
+        color: #292929; }
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 14px; }
+    body header {
+      width: 100%; }
+      body header nav {
+        justify-content: space-evenly; }
+        body header nav #Logo_Image {
+          width: 60px;
+          height: 60px; }
+          body header nav #Logo_Image a img {
+            width: 60px;
+            height: 60px; }
+        body header nav ul {
+          display: none; }
+        body header nav #btn_nav button {
+          width: 100px;
+          height: 35px;
+          font-size: 13px; }
+        body header nav #btn_nav #list_nav {
+          display: flex;
+          width: 35px;
+          height: 35px; }
+      body header #Message_Index {
+        margin-top: 15px; }
+        body header #Message_Index #message_h1 {
+          font-size: 12px;
+          margin: 7px 0; }
+        body header #Message_Index #message_h3 {
+          font-size: 10px;
+          margin-top: 14px; }
+        body header #Message_Index #Btns {
+          margin-top: 40px;
+          flex-direction: column; }
+          body header #Message_Index #Btns button {
+            margin: 5px 0;
+            font-size: 12px;
+            width: 200px;
+            height: 35px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center; }
+            body header #Message_Index #Btns button svg {
+              width: 12px;
+              height: 12px;
+              margin-left: 2px; } }
+
+/*# sourceMappingURL=index.css.map */

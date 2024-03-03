@@ -1,0 +1,114 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0; }
+
+body header {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/download_section/concepto-prisma-negro-generado-ia.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  body header nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    body header nav #Logo_Image {
+      width: 100px;
+      height: 100px;
+      margin-left: 14px;
+      margin-top: 25px; }
+      body header nav #Logo_Image a {
+        text-decoration: none; }
+        body header nav #Logo_Image a img {
+          width: 50px;
+          height: 50px; }
+    body header nav ul {
+      display: flex;
+      flex-direction: row; }
+      body header nav ul li {
+        list-style: none;
+        margin: 0 14px; }
+        body header nav ul li a {
+          text-decoration: none;
+          color: white;
+          font-size: medium;
+          font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; }
+        body header nav ul li:hover a {
+          text-decoration: underline; }
+    body header nav #btn_nav {
+      display: flex;
+      flex-direction: row; }
+      body header nav #btn_nav button {
+        width: 100px;
+        height: 38px;
+        margin-right: 14px;
+        border-radius: 25px;
+        font-size: medium;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        border: none; }
+      body header nav #btn_nav button:hover {
+        box-shadow: 4px 6px 4px #585757;
+        color: #292929; }
+      body header nav #btn_nav #list_nav {
+        width: 33px;
+        display: none;
+        justify-content: center;
+        align-items: center; }
+        body header nav #btn_nav #list_nav svg {
+          width: 60%;
+          height: 60%; }
+  body header #info-download {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%; }
+    body header #info-download #message-download {
+      width: 40%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: left; }
+      body header #info-download #message-download h1 {
+        width: 90%;
+        font-size: 45px;
+        font-family: titanone; }
+      body header #info-download #message-download p {
+        width: 90%;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 20px; }
+      body header #info-download #message-download div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; }
+        body header #info-download #message-download div button {
+          width: 200px;
+          height: 50px;
+          border-radius: 25px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center; }
+    body header #info-download #img-linux-dw {
+      width: 55%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      body header #info-download #img-linux-dw img {
+        width: 100%;
+        height: 80%; }
+
+@font-face {
+  font-family: titanone;
+  src: url("../font/TitanOne-Regular.ttf"); }
+
+/*# sourceMappingURL=download.css.map */
