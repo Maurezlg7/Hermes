@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermes</title>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/css/user.css">
+  <link rel="shortcut icon" href="../static/img/Logo_Hermes.png" type="image/x-icon">
+</head>
+<body>
+  <div class="section">
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 text-center align-self-center py-5">
+          <div class="section pb-5 pt-5 pt-sm-2 text-center">
+            <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+            <label for="reg-log" id="btn_change"></label>
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper">
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Log In</h4>
+                      <div class="form-group">
+                        <input type="email" class="form-style" placeholder="Email" id="email_l">
+                        <i class="input-icon uil uil-at"></i>
+                      </div> 
+                      <div class="form-group mt-2">
+                        <input type="password" class="form-style" placeholder="Password" id="password_l">
+                        <i class="input-icon uil uil-lock-alt" id="padlock_l"></i>
+                      </div>
+                      <a class="btn mt-4" id="btn-login">Login</a>
+                      <p class="mb-0 mt-4 text-center"><a class="link">Forgot your password?</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-3 pb-3">Sign Up</h4>
+                      <div class="form-group">
+                        <input type="text" class="form-style" placeholder="Full Name" id="name">
+                        <i class="input-icon uil uil-user"></i>
+                      </div>  
+                      <div class="form-group mt-2">
+                        <input type="tel" class="form-style" placeholder="Phone Number" id="phone">
+                        <i class="input-icon uil uil-phone"></i>
+                      </div>  
+                      <div class="form-group mt-2">
+                        <input type="email" class="form-style" placeholder="Email" id="email_r">
+                        <i class="input-icon uil uil-at"></i>
+                      </div>
+                      <div class="form-group mt-2">
+                        <input type="password" class="form-style" placeholder="Password" id="password_r">
+                        <i class="input-icon uil uil-lock-alt" id="padlock_r"></i>
+                      </div>
+                      <a class="btn mt-4" id="btn-register">Register</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Obtener referencias a los elementos del DOM
+    const password_l = document.getElementById("password_l");
+    const password_r = document.getElementById("password_r");
+  
+    // Función para manejar el evento click en el icono del candado izquierdo
+    padlock_l.onclick = () => {
+      if (password_l.type === 'password') {
+        password_l.type = 'text';
+      } else {
+        password_l.type = 'password';
+      }
+    };
+  
+    padlock_r.onclick = () => {
+      if (password_r.type === 'password') {
+        password_r.type = 'text';
+      } else {
+        password_r.type = 'password';
+      }
+    };
+  </script>
+  <script src="../static/js/user.js"></script>  
+</body>
+</html>

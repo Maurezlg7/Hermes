@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/app.css">
+    <link rel="shortcut icon" href="../static/img/Logo_Hermes.png" type="image/x-icon">
+    <title>HERMES | App</title>
+</head>
+<body>
+    <div id="servers">
+        <div class="server-item-conteiner item-direct">
+            <div class="server-item">
+                <button class="server-button" style="background-color: #FFA500;">
+                    <img src="../static/img/Logo_Hermes.png" alt="">
+                </button>
+                <span>Direct</span>
+            </div>
+        </div>
+        <div id="list-servers" class="server-item-conteiner">
+            
+        </div>
+        <div class="server-item-conteiner item-create">
+            <div class="server-item">
+                <button class="server-button" style="background-color: #FFA500;" id="add-server">
+                    <img src="../static/svg/plus-circle-dotted.svg" alt="">
+                </button>
+                <span>Create</span>
+            </div>
+            <div class="server-item">
+                <button class="server-button" style="background-color: #FFA500;" id="search-server">
+                    <img src="../static/svg/compass-svgrepo-com.svg" alt="">
+                </button>
+                <span>Search</span>
+            </div>
+        </div>
+    </div>
+    <div id="section_user">
+        <div class="data_user" id="data_user">
+            <div class="channels_text">
+                <div class="ocult_channels">
+                    <button>
+                        <img src="../static/svg/caret-down-fill.svg" alt="Icon">
+                    </button>
+                    <span>Texts Channels</span>
+                </div>
+                <div class="create_channels">
+                    <button id="create_channel">
+                        <img src="../static/svg/patch-plus-fill.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="channels">
+                <img src="../static/svg/hash.svg" alt="">
+                <span>Bienvenido</span>
+            </div>
+        </div>
+        <div class="user_profile">
+            <div class="user_view_profile">
+                <div class="view_perfil">
+                    <img src="../static/svg/person.svg" alt="">
+                </div>
+                <div class="state_connected">
+                    <div class="name_user"><span>{{name}}</span></div>
+                    <div class="type_connection">
+                        <span>Connected</span>
+                        <img src="../static/svg/circle-fill.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="settings-user">
+                <button>
+                    <img src="../static/svg/gear-fill.svg" alt="">
+                </button>
+                <button>
+                    <img src="../static/svg/person-plus-fill.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="chatbox">
+        <div class="body_chat">
+            <div class="conteiner_chat" id="conteiner_chat">
+            </div>
+        </div>
+        <div class="chat">
+            <div>
+                <input type="text" id="input_nombre_channel">
+                <button id="create_chat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

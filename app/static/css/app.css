@@ -1,0 +1,494 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body div {
+  height: 100%;
+  max-height: 100%;
+}
+body #servers {
+  background: linear-gradient(174deg, rgb(0, 0, 0) 0%, rgb(120, 120, 133) 53%, rgb(24, 26, 26) 100%);
+  width: 5%;
+  max-width: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: auto;
+}
+body #servers::-webkit-scrollbar {
+  width: 6px;
+}
+body #servers::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+body #servers .server-item-conteiner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #servers .server-item-conteiner .server-item {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: border 0.4s ease;
+}
+body #servers .server-item-conteiner .server-item button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #727272;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border-radius 0.4s ease;
+}
+body #servers .server-item-conteiner .server-item button img, body #servers .server-item-conteiner .server-item button svg {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+}
+body #servers .server-item-conteiner .server-item span {
+  display: none;
+  position: absolute;
+  transform: translateY(-100%);
+  background-color: #000000;
+  color: white;
+  font-family: sans-serif;
+  padding: 5px;
+  border-radius: 5px;
+  border: white 1px solid;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+  text-align: center;
+  white-space: nowrap;
+  height: 10px;
+  font-size: small;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+body #servers .server-item-conteiner .server-item:hover {
+  border-left: 7px white solid;
+}
+body #servers .server-item-conteiner .server-item:hover span {
+  display: flex;
+  visibility: visible;
+}
+body #servers .server-item-conteiner .server-item:hover button {
+  border-radius: 25%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+body #servers #list-servers {
+  height: 75%;
+  height: max-content;
+}
+body #servers .item-direct {
+  height: 10%;
+}
+body #servers .item-direct div {
+  margin: 5px 0;
+}
+body #servers .item-create {
+  height: 20%;
+}
+body #servers .item-create div {
+  margin: 5px 0;
+}
+body #section_user {
+  width: 20%;
+  background-color: #282828;
+  border: 1px solid #fafafa;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body #section_user div {
+  width: 100%;
+}
+body #section_user .data_user {
+  height: 90%;
+  padding: 5px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  overflow-x: hidden;
+}
+body #section_user .data_user::-webkit-scrollbar {
+  width: 6px;
+}
+body #section_user .data_user::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+body #section_user .data_user div {
+  width: 97%;
+  height: 2%;
+  margin-left: 5px;
+}
+body #section_user .data_user div button {
+  width: 100%;
+  background-color: #282828;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  text-align: start;
+  transition: color 0.5s ease;
+}
+body #section_user .data_user div button:hover {
+  color: rgb(140, 233, 0);
+}
+body #section_user .data_user .channels_text {
+  color: white;
+  width: 82%;
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+  transition: border-bottom 0.5s ease;
+}
+body #section_user .data_user .channels_text .ocult_channels {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+body #section_user .data_user .channels_text .ocult_channels button {
+  width: 10px;
+  height: 10px;
+  margin-bottom: 5px;
+}
+body #section_user .data_user .channels_text .ocult_channels span {
+  margin-left: 10px;
+}
+body #section_user .data_user .channels_text .create_channels {
+  width: 30%;
+  height: 15px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+body #section_user .data_user .channels_text .create_channels button {
+  width: 10px;
+  height: 10px;
+}
+body #section_user .data_user .channels_text:hover {
+  border-bottom: 2px solid white;
+}
+body #section_user .data_user .channels {
+  margin: 10px 0;
+  color: white;
+  width: 87%;
+  height: 25px;
+  background-color: #282828;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  transition: background-color 0.5s ease;
+}
+body #section_user .data_user .channels img {
+  width: 30px;
+  height: 26px;
+}
+body #section_user .data_user .channels:hover {
+  background-color: #9d9b9b;
+}
+body #section_user .user_profile {
+  height: 10%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+body #section_user .user_profile .user_view_profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  max-width: 50%;
+}
+body #section_user .user_profile .user_view_profile .view_perfil {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #section_user .user_profile .user_view_profile .view_perfil img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+body #section_user .user_profile .user_view_profile .state_connected {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body #section_user .user_profile .user_view_profile .state_connected .name_user {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+body #section_user .user_profile .user_view_profile .state_connected .name_user span {
+  text-align: left;
+  color: white;
+}
+body #section_user .user_profile .user_view_profile .state_connected .type_connection {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+body #section_user .user_profile .user_view_profile .state_connected .type_connection span {
+  text-align: left;
+  color: white;
+}
+body #section_user .user_profile .user_view_profile .state_connected .type_connection img {
+  margin: 0 5px;
+  width: 10px;
+  height: 10px;
+}
+body #section_user .user_profile .settings-user {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body #section_user .user_profile .settings-user button {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #282828;
+  transition: background-color 0.5s ease;
+  border: none;
+}
+body #section_user .user_profile .settings-user button img {
+  width: 70%;
+  height: 70%;
+}
+body #section_user .user_profile .settings-user button:hover {
+  background-color: #e49605;
+}
+body #chatbox {
+  width: 75%;
+  background-color: #2b2828;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body #chatbox div {
+  width: 100%;
+}
+body #chatbox .body_chat {
+  height: 85%;
+  background-color: #1d1d1d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #chatbox .body_chat .conteiner_chat {
+  width: 99%;
+  height: 99%;
+  margin: 10px;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  overflow-x: hidden;
+}
+body #chatbox .body_chat .conteiner_chat::-webkit-scrollbar {
+  width: 6px;
+}
+body #chatbox .body_chat .conteiner_chat::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+body #chatbox .body_chat .conteiner_chat div {
+  margin: 15px 0;
+  font-family: sans-serif;
+}
+body #chatbox .body_chat .conteiner_chat .emisor {
+  align-self: flex-end;
+  background-color: #FFA500;
+  width: auto;
+  height: auto;
+  max-width: max-content;
+  max-height: max-content;
+  margin-right: auto;
+  border-radius: 10px 10px 10px 0px;
+  padding: 5px;
+  display: flex;
+  text-align: left;
+  align-items: center;
+  padding: 7px;
+  color: #2c2b2b;
+}
+body #chatbox .body_chat .conteiner_chat .receptor {
+  align-self: flex-end;
+  background-color: #ffffff;
+  width: auto;
+  height: auto;
+  max-width: max-content;
+  max-height: max-content;
+  margin-right: auto;
+  border-radius: 10px 10px 0px 10px;
+  padding: 5px;
+  display: flex;
+  text-align: left;
+  align-items: center;
+  padding: 7px;
+  color: #2c2b2b;
+}
+body #chatbox .chat {
+  height: 15%;
+  background-color: #232222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #chatbox .chat div {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #chatbox .chat div input {
+  width: 95%;
+  height: 94%;
+  max-width: 94%;
+  max-height: 94%;
+  border-radius: 10px 0 0 10px;
+  padding-left: 5px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+body #chatbox .chat div button {
+  width: 5%;
+  height: 100%;
+  background-color: #727272;
+  color: white;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #chatbox .chat div button svg {
+  width: 80%;
+  height: 80%;
+}
+
+.popup-background {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.317);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-background .popup-container {
+  width: 800px;
+  height: 600px;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.popup-background .popup-container .popup-btn-close {
+  position: absolute;
+  top: 12%;
+  left: 73%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  font-size: 90%;
+}
+.popup-background .popup-container .popup-img-preview {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url(../img/app_images/person.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.626);
+}
+.popup-background .popup-container .custom-image-upload-button {
+  position: absolute;
+  top: 52%;
+  left: 53%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: none;
+}
+.popup-background .popup-container .custom-image-upload-button svg {
+  width: 70%;
+  height: 70%;
+  color: white;
+}
+.popup-background .popup-container .popup-input-name {
+  margin-top: 30px;
+  width: 250px;
+  height: 30px;
+  font-size: 20px;
+  padding-left: 5px;
+  font-family: sans-serif;
+}
+.popup-background .popup-container .popup-btn-create {
+  margin-top: 15px;
+  width: 125px;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 15px;
+  color: white;
+  background-color: #575454;
+}
+
+/*# sourceMappingURL=app.css.map */
