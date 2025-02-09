@@ -10,7 +10,7 @@ class DatabaseConnection:
                 host='localhost',
                 user='root',
                 port=3306,
-                password='C0ntr4s3ñ@MuyF0rt3!',
+                password='Kingmaster7+',
                 database='hermes'
             )
         return cls._connection

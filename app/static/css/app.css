@@ -1,494 +1,638 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   width: 100%;
   height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #222;
 }
-body div {
-  height: 100%;
-  max-height: 100%;
-}
-body #servers {
-  background: linear-gradient(174deg, rgb(0, 0, 0) 0%, rgb(120, 120, 133) 53%, rgb(24, 26, 26) 100%);
+body header {
   width: 5%;
-  max-width: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100vh;
+  max-height: 100vh;
+  background-color: #202225;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #222;
+  overflow: visible !important;
   position: relative;
-  overflow-x: auto;
+  z-index: 1;
 }
-body #servers::-webkit-scrollbar {
-  width: 6px;
-}
-body #servers::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-}
-body #servers .server-item-conteiner {
+body header ul {
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: center;
+  padding: 10px 0;
+  overflow: visible;
 }
-body #servers .server-item-conteiner .server-item {
+body header ul li {
   position: relative;
+  z-index: 1000;
   width: 100%;
-  height: 60px;
+  height: 7vh;
+  margin: 0.5vh 0;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  transition: border 0.4s ease;
+  overflow: visible;
 }
-body #servers .server-item-conteiner .server-item button {
-  width: 50px;
-  height: 50px;
+body header ul li button {
+  width: 7vh;
+  height: 7vh;
   border-radius: 50%;
-  background-color: #727272;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: border-radius 0.4s ease;
+  background-color: aliceblue;
+  cursor: pointer;
 }
-body #servers .server-item-conteiner .server-item button img, body #servers .server-item-conteiner .server-item button svg {
-  width: 90%;
-  height: 90%;
-  border-radius: 50%;
+body header ul li svg, body header ul li img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  color: #222;
+  margin: 0 auto !important;
 }
-body #servers .server-item-conteiner .server-item span {
-  display: none;
+body header ul li span {
   position: absolute;
-  transform: translateY(-100%);
-  background-color: #000000;
-  color: white;
+  opacity: 0;
+  transform: translateX(-10px);
   font-family: sans-serif;
-  padding: 5px;
-  border-radius: 5px;
-  border: white 1px solid;
-  transition: opacity 0.7s ease, visibility 0.7s ease;
-  text-align: center;
-  white-space: nowrap;
-  height: 10px;
-  font-size: small;
-  font-weight: bold;
-  justify-content: center;
-  align-items: center;
+  font-weight: 800;
 }
-body #servers .server-item-conteiner .server-item:hover {
-  border-left: 7px white solid;
+body header ul li button {
+  transition: background-color 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+  border-left: 4px solid transparent;
 }
-body #servers .server-item-conteiner .server-item:hover span {
-  display: flex;
-  visibility: visible;
-}
-body #servers .server-item-conteiner .server-item:hover button {
+body header ul li:hover button {
   border-radius: 25%;
-  background-color: rgba(255, 255, 255, 0.2);
+  border-left: 4px solid white;
 }
-body #servers #list-servers {
-  height: 75%;
-  height: max-content;
+body header ul li:hover {
+  border-left: 4px solid rgb(239, 239, 239);
+  z-index: 10001;
 }
-body #servers .item-direct {
-  height: 10%;
+body header ul li:hover span {
+  position: absolute;
+  left: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: rgb(239, 239, 239);
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 10002;
+  font-size: 14px;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
 }
-body #servers .item-direct div {
-  margin: 5px 0;
+body header::-webkit-scrollbar {
+  width: 8px;
 }
-body #servers .item-create {
-  height: 20%;
+body header::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 10px;
 }
-body #servers .item-create div {
-  margin: 5px 0;
+body header::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  transition: background 0.3s;
 }
-body #section_user {
-  width: 20%;
-  background-color: #282828;
-  border: 1px solid #fafafa;
-  display: flex;
-  flex-direction: column;
+body header::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+body main {
+  width: 15%;
+  height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-body #section_user div {
-  width: 100%;
-}
-body #section_user .data_user {
-  height: 90%;
-  padding: 5px 15px;
+body main .server_name {
+  width: 100% !important;
+  height: 7vh;
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  overflow-x: hidden;
-}
-body #section_user .data_user::-webkit-scrollbar {
-  width: 6px;
-}
-body #section_user .data_user::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-}
-body #section_user .data_user div {
-  width: 97%;
-  height: 2%;
-  margin-left: 5px;
-}
-body #section_user .data_user div button {
-  width: 100%;
-  background-color: #282828;
+  justify-content: center;
+  align-items: center;
+  background-color: #36393F;
   color: white;
-  font-family: sans-serif;
-  font-weight: bold;
-  border-radius: 5px;
-  border: none;
-  text-align: start;
-  transition: color 0.5s ease;
+  font-size: 1.2rem;
+  font-weight: 800;
+  box-shadow: 2px 4px 2px solid black;
+  border-bottom: 2px solid #222;
+  cursor: pointer;
 }
-body #section_user .data_user div button:hover {
-  color: rgb(140, 233, 0);
-}
-body #section_user .data_user .channels_text {
-  color: white;
-  width: 82%;
-  height: 25px;
+body main .server_name ul {
+  list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: none;
-  transition: border-bottom 0.5s ease;
+  padding: 2vh;
+  width: 100%;
+  max-height: 100vh;
 }
-body #section_user .data_user .channels_text .ocult_channels {
+body main .server_name ul li {
+  width: 100%;
+  position: relative;
+}
+body main .server_name ul .toggle {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
-body #section_user .data_user .channels_text .ocult_channels button {
-  width: 10px;
-  height: 10px;
-  margin-bottom: 5px;
+body main .server_name ul .bi-chevron-down {
+  transition: transform 0.3s ease;
 }
-body #section_user .data_user .channels_text .ocult_channels span {
-  margin-left: 10px;
-}
-body #section_user .data_user .channels_text .create_channels {
-  width: 30%;
-  height: 15px;
-  margin-right: 10px;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-}
-body #section_user .data_user .channels_text .create_channels button {
-  width: 10px;
-  height: 10px;
-}
-body #section_user .data_user .channels_text:hover {
-  border-bottom: 2px solid white;
-}
-body #section_user .data_user .channels {
-  margin: 10px 0;
+body main .server_name ul .server_options {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
   color: white;
-  width: 87%;
-  height: 25px;
-  background-color: #282828;
   border-radius: 5px;
+  display: none;
+  z-index: 10;
+}
+body main .server_name ul .server_options li {
+  padding: 5px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 1.4vh;
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
-  transition: background-color 0.5s ease;
+  width: 23vh;
+  height: 4vh;
 }
-body #section_user .data_user .channels img {
-  width: 30px;
-  height: 26px;
+body main .server_name ul .server_options li:hover {
+  background: #555;
 }
-body #section_user .data_user .channels:hover {
-  background-color: #9d9b9b;
+body main .server_name ul .toggle.active .server_options {
+  display: block;
 }
-body #section_user .user_profile {
-  height: 10%;
-  width: 100%;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+body main .server_name ul .toggle.active .bi-chevron-down {
+  transform: rotate(180deg);
 }
-body #section_user .user_profile .user_view_profile {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 50%;
-  max-width: 50%;
-}
-body #section_user .user_profile .user_view_profile .view_perfil {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-body #section_user .user_profile .user_view_profile .view_perfil img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-body #section_user .user_profile .user_view_profile .state_connected {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body #section_user .user_profile .user_view_profile .state_connected .name_user {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-body #section_user .user_profile .user_view_profile .state_connected .name_user span {
-  text-align: left;
+body main .channels {
+  width: 100% !important;
+  height: 87vh;
+  max-height: 87vh;
+  background-color: #36393F;
   color: white;
-}
-body #section_user .user_profile .user_view_profile .state_connected .type_connection {
-  height: 50%;
   display: flex;
-  flex-direction: row;
   justify-content: left;
-  align-items: center;
-}
-body #section_user .user_profile .user_view_profile .state_connected .type_connection span {
-  text-align: left;
-  color: white;
-}
-body #section_user .user_profile .user_view_profile .state_connected .type_connection img {
-  margin: 0 5px;
-  width: 10px;
-  height: 10px;
-}
-body #section_user .user_profile .settings-user {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-body #section_user .user_profile .settings-user button {
-  width: 50px;
-  height: 50px;
-  margin: 0 10px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #282828;
-  transition: background-color 0.5s ease;
-  border: none;
-}
-body #section_user .user_profile .settings-user button img {
-  width: 70%;
-  height: 70%;
-}
-body #section_user .user_profile .settings-user button:hover {
-  background-color: #e49605;
-}
-body #chatbox {
-  width: 75%;
-  background-color: #2b2828;
-  display: flex;
+  align-items: start;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body #chatbox div {
-  width: 100%;
-}
-body #chatbox .body_chat {
-  height: 85%;
-  background-color: #1d1d1d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-body #chatbox .body_chat .conteiner_chat {
-  width: 99%;
-  height: 99%;
-  margin: 10px;
-  background-color: #1c1c1c;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
+  overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #222;
+  position: relative;
+  z-index: 1;
 }
-body #chatbox .body_chat .conteiner_chat::-webkit-scrollbar {
-  width: 6px;
-}
-body #chatbox .body_chat .conteiner_chat::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-}
-body #chatbox .body_chat .conteiner_chat div {
-  margin: 15px 0;
-  font-family: sans-serif;
-}
-body #chatbox .body_chat .conteiner_chat .emisor {
-  align-self: flex-end;
-  background-color: #FFA500;
-  width: auto;
-  height: auto;
-  max-width: max-content;
-  max-height: max-content;
-  margin-right: auto;
-  border-radius: 10px 10px 10px 0px;
-  padding: 5px;
-  display: flex;
-  text-align: left;
-  align-items: center;
-  padding: 7px;
-  color: #2c2b2b;
-}
-body #chatbox .body_chat .conteiner_chat .receptor {
-  align-self: flex-end;
-  background-color: #ffffff;
-  width: auto;
-  height: auto;
-  max-width: max-content;
-  max-height: max-content;
-  margin-right: auto;
-  border-radius: 10px 10px 0px 10px;
-  padding: 5px;
-  display: flex;
-  text-align: left;
-  align-items: center;
-  padding: 7px;
-  color: #2c2b2b;
-}
-body #chatbox .chat {
-  height: 15%;
-  background-color: #232222;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-body #chatbox .chat div {
-  width: 80%;
-  height: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-body #chatbox .chat div input {
-  width: 95%;
-  height: 94%;
-  max-width: 94%;
-  max-height: 94%;
-  border-radius: 10px 0 0 10px;
-  padding-left: 5px;
-  font-size: 20px;
-  font-family: sans-serif;
-}
-body #chatbox .chat div button {
-  width: 5%;
-  height: 100%;
-  background-color: #727272;
-  color: white;
-  border-radius: 0 10px 10px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body #chatbox .chat div button svg {
-  width: 80%;
-  height: 80%;
-}
-
-.popup-background {
+body main .channels ul {
   width: 100%;
-  height: 100vh;
-  position: absolute;
-  background-color: rgba(128, 128, 128, 0.317);
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  list-style: none;
+}
+body main .channels ul .options_channel {
+  padding: 0.7vh 1vh;
+  width: 100%;
+  height: 4vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body main .channels ul .options_channel:hover {
+  background-color: transparent;
+  font-family: sans-serif;
+}
+body main .channels ul .options_channel div {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+}
+body main .channels ul .options_channel div b {
+  margin-left: 0.5vh;
+}
+body main .channels ul .options_channel div img {
+  width: 2.5vh;
+  height: 2.5vh;
+  object-fit: contain;
+  margin-right: 1vh;
+}
+body main .channels ul .options_channel div span {
+  font-size: 1.4vh;
+  font-weight: 800;
+  margin-left: 0.5vh;
+}
+body main .channels ul li {
+  position: relative;
+  padding: 0.7vh 1vh;
+  width: 100%;
+  height: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center !important;
+  cursor: pointer;
+}
+body main .channels ul li svg {
+  margin: auto 0;
+}
+body main .channels ul li span {
+  font-size: 1.7vh;
+  margin-left: 1vh;
+}
+body main .channels ul li:hover {
+  background-color: #555;
+}
+body main .User {
+  width: 100% !important;
+  background-color: #222;
+  height: 6vh;
+  color: white;
+}
+body main .User ul {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1vh;
+}
+body main .User ul li {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin: 0 2px;
 }
-.popup-background .popup-container {
-  width: 800px;
-  height: 600px;
-  background-color: #1f1f1f;
-  border-radius: 10px;
+body main .User ul li button {
+  width: 4vh;
+  height: 4vh;
+  border: none;
+  border-radius: 15%;
+  background-color: #222;
+  transition: background-color 0.3s ease;
+}
+body main .User ul li button svg {
+  color: white;
+  width: 70%;
+  height: 70%;
+}
+body main .User ul li button:hover {
+  background-color: #555;
+}
+body main .User ul li div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.popup-background .popup-container .popup-btn-close {
-  position: absolute;
-  top: 12%;
-  left: 73%;
-  width: 25px;
-  height: 25px;
+body main .User ul li img {
+  width: 4vh;
+  height: 4vh;
+  object-fit: contain;
   border-radius: 50%;
-  font-size: 90%;
 }
-.popup-background .popup-container .popup-img-preview {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-image: url(../img/app_images/person.svg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0.626);
+body main .User ul li span {
+  font-size: 1.4vh;
+  font-weight: 800;
+  margin-left: 1vh;
 }
-.popup-background .popup-container .custom-image-upload-button {
-  position: absolute;
-  top: 52%;
-  left: 53%;
-  width: 40px;
-  height: 40px;
+body main .User ul .use_section {
+  width: 15vh;
+  justify-content: left;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+body main .User ul .use_section:hover {
+  background-color: #555;
+}
+body footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  height: 100vh;
+  background-color: #202225;
+  overflow: hidden;
+}
+body footer .Chatbox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body footer .Chatbox .Chatbox_body {
+  width: 100%;
+  height: 93%;
+  background-color: #222;
+  color: white;
+}
+body footer .Chatbox .Chatbox_body .Nav {
+  width: 100%;
+  height: 6%;
+  background-color: #222;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7vh;
+  border-bottom: #555 0.2px solid;
+}
+body footer .Chatbox .Chatbox_body .Nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  height: 100%;
+}
+body footer .Chatbox .Chatbox_body .Nav ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body footer .Chatbox .Chatbox_body .Nav ul .Search {
+  margin: 0;
+  height: 100%;
+  width: 2vh;
+}
+body footer .Chatbox .Chatbox_body .Nav ul .Search div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 1vh;
+  height: 2.5vh;
+}
+body footer .Chatbox .Chatbox_body .Nav .name_channel {
+  width: 30%;
+  justify-content: left;
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 1.7vh;
+}
+body footer .Chatbox .Chatbox_body .Nav .name_channel svg {
+  width: 3vh;
+  height: 3vh;
+}
+body footer .Chatbox .Chatbox_body .Nav .options {
+  width: 70%;
+  justify-content: right !important;
+}
+body footer .Chatbox .Chatbox_body .Nav .options li {
+  margin: 0 0.5vh;
+  max-width: 7vh;
+}
+body footer .Chatbox .Chatbox_body .Nav .options li button {
+  width: 4vh;
+  height: 4vh;
+  border: none;
+  border-radius: 15%;
+  background-color: #222;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+body footer .Chatbox .Chatbox_body .Nav .options li button svg {
+  color: white;
+  width: 70%;
+  height: 70%;
+}
+body footer .Chatbox .Chatbox_body .Nav .options li button:hover {
+  background-color: #555;
+}
+body footer .Chatbox .Chatbox_body .Nav .Search {
+  min-width: 20vh;
+  background-color: #222;
+}
+body footer .Chatbox .Chatbox_body .Nav .Search .conteiner_search {
+  min-width: 20vh;
+  height: 4vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+body footer .Chatbox .Chatbox_body .Nav .Search .conteiner_search input {
+  width: 80%;
+  height: 100%;
+  background-color: #36393F;
+  color: white;
+  border: none !important;
+  padding: 0.5vh;
+  font-size: 1.4vh;
+  font-weight: 800;
+}
+body footer .Chatbox .Chatbox_body .Nav .Search .conteiner_search input:focus {
+  outline: none;
+}
+body footer .Chatbox .Chatbox_body .Nav .Search .conteiner_search button {
+  width: 4vh;
+  height: 4vh;
+  background-color: #36393F;
+  color: white;
+  border: none !important;
+  border-radius: 0;
+  cursor: pointer;
+}
+body footer .Chatbox .Chatbox_body .Nav .Search .conteiner_search button svg {
+  width: 70%;
+  height: 70%;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages {
+  width: 100%;
+  height: 87%;
+  max-height: 87%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #222;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages::-webkit-scrollbar {
+  width: 8px;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 10px;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages li {
+  width: 100%;
+  height: auto;
+  min-height: 7%;
+  max-height: 15%;
+  border-bottom: #36393F 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: start;
+  padding: 0.7vh;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages li .username {
+  font-weight: 800;
+  font-family: sans-serif;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages li .message {
+  font-family: monospace;
+  font-size: large;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages li .image_perfil {
+  width: 7vh;
+  min-height: 20vh;
+  object-fit: contain;
+  margin-right: 1vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  padding: 0.2vh;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages li .image_perfil img {
+  width: 6vh;
+  height: 6vh;
+  background-color: aquamarine;
+  object-fit: contain;
   border-radius: 50%;
+}
+body footer .Chatbox .Chatbox_body .Chatbox_messages li .container_message {
+  width: 100%;
+  min-height: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: start;
+  padding: 0.7vh;
+}
+body footer .Chatbox .Chatbox_input {
+  height: auto;
+  min-height: 7%;
+  max-height: 15%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.2s ease-in-out;
+}
+body footer .Chatbox .Chatbox_input .Conteiner_input {
+  background-color: #36393F;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 90%;
+  padding: 0.7vh;
+}
+body footer .Chatbox .Chatbox_input .Conteiner_input textarea {
+  width: 90%;
+  min-height: 5vh;
+  max-height: 30vh;
+  resize: none;
+  overflow-y: hidden;
+  background-color: #36393F;
+  color: white;
+  font-family: monospace;
+  font-weight: 800;
+  font-size: 20px;
+  border: none;
+  padding: 10px;
+  line-height: 1.5 !important;
+  text-align: left;
+  vertical-align: middle !important;
+}
+body footer .Chatbox .Chatbox_input .Conteiner_input textarea:focus {
+  outline: none;
+}
+body footer .Chatbox .Chatbox_input .Conteiner_input button {
+  width: 5vh;
+  height: 5vh;
+  background-color: #36393F;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+body footer .Chatbox .Chatbox_input .Conteiner_input button svg {
+  width: 70%;
+  height: 70%;
+  color: gray;
+  transition: color 0.3s ease;
+}
+body footer .Chatbox .Chatbox_input .Conteiner_input button svg:hover {
+  color: white;
+}
+body footer .Chatbox .Chatbox_input .Conteiner_button_games {
+  width: 4%;
+  height: 100%;
+  margin-left: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  border: none;
 }
-.popup-background .popup-container .custom-image-upload-button svg {
-  width: 70%;
-  height: 70%;
+body footer .Chatbox .Chatbox_input .Conteiner_button_games button {
+  width: 6.5vh;
+  height: 6.5vh;
+  background-color: #36393F;
   color: white;
-}
-.popup-background .popup-container .popup-input-name {
-  margin-top: 30px;
-  width: 250px;
-  height: 30px;
-  font-size: 20px;
-  padding-left: 5px;
-  font-family: sans-serif;
-}
-.popup-background .popup-container .popup-btn-create {
-  margin-top: 15px;
-  width: 125px;
   border: none;
-  border-radius: 5px;
-  height: 30px;
-  font-size: 15px;
+  cursor: pointer;
+  border-radius: 7px;
+}
+body footer .Chatbox .Chatbox_input .Conteiner_button_games button svg {
+  width: 60%;
+  height: 60%;
+  color: gray;
+  transition: color 0.3s ease;
+}
+body footer .Chatbox .Chatbox_input .Conteiner_button_games button svg:hover {
   color: white;
-  background-color: #575454;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -25,7 +25,7 @@ def login_user():
 
 @app_bp.route('/app')
 def app_page():
-    with open("C:/Users/Mauro/Documents/CODE/Proyectos/Hermes/app/static/json/user.json","r") as file:
+    with open("app/static/json/user.json","r") as file:
         name_user = json.load(file)
     name = str(name_user["Name"])
     return render_template('app.html', name=name)

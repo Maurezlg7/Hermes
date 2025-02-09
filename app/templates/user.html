@@ -25,11 +25,11 @@
                     <div class="section text-center">
                       <h4 class="mb-4 pb-3">Log In</h4>
                       <div class="form-group">
-                        <input type="email" class="form-style" placeholder="Email" id="email_l">
+                        <input type="email" class="form-style" placeholder="Email" id="email_login">
                         <i class="input-icon uil uil-at"></i>
                       </div> 
                       <div class="form-group mt-2">
-                        <input type="password" class="form-style" placeholder="Password" id="password_l">
+                        <input type="password" class="form-style" placeholder="Password" id="password_login">
                         <i class="input-icon uil uil-lock-alt" id="padlock_l"></i>
                       </div>
                       <a class="btn mt-4" id="btn-login">Login</a>
@@ -50,11 +50,11 @@
                         <i class="input-icon uil uil-phone"></i>
                       </div>  
                       <div class="form-group mt-2">
-                        <input type="email" class="form-style" placeholder="Email" id="email_r">
+                        <input type="email" class="form-style" placeholder="Email" id="email_register">
                         <i class="input-icon uil uil-at"></i>
                       </div>
                       <div class="form-group mt-2">
-                        <input type="password" class="form-style" placeholder="Password" id="password_r">
+                        <input type="password" class="form-style" placeholder="Password" id="password_register">
                         <i class="input-icon uil uil-lock-alt" id="padlock_r"></i>
                       </div>
                       <a class="btn mt-4" id="btn-register">Register</a>
@@ -69,11 +69,9 @@
     </div>
   </div>
   <script>
-    // Obtener referencias a los elementos del DOM
-    const password_l = document.getElementById("password_l");
+    const password_l = document.getElementById("password_login");
     const password_r = document.getElementById("password_r");
-  
-    // Función para manejar el evento click en el icono del candado izquierdo
+    
     padlock_l.onclick = () => {
       if (password_l.type === 'password') {
         password_l.type = 'text';
@@ -90,6 +88,7 @@
       }
     };
   </script>
-  <script src="../static/js/user.js"></script>  
+  <script type="module" src="../static/js/user.js"></script>
+  <script type="module" src="../static/services/services.js"></script>  
 </body>
 </html>

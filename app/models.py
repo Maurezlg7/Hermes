@@ -1,5 +1,6 @@
 from flask import request, jsonify, json
 from .database import DatabaseConnection
+
 class User_Controller():
     def __init__(self):
         self._id = None
@@ -14,7 +15,7 @@ class User_Controller():
         self._phone = data.get('phone')
         self._email = data.get('email')
         self._password = data.get('password')
-        
+
         try:
             query_check = "SELECT * FROM user WHERE email = %s"
             values = (self._email,)
@@ -28,7 +29,7 @@ class User_Controller():
                 return jsonify("Usuario creado exitosamente")
             else:
                 return jsonify("El usuario ya existe")
-        
+
         except Exception as e:
             self._reset_attributes()
             return jsonify(f"No se pudo crear el usuario. ERROR: => {e}\nEste error se debe a que la logica no es correcta al querer hacerle al sql")
@@ -36,7 +37,7 @@ class User_Controller():
     def user_login(self, data):
         email = data.get('email')
         password = data.get('password')
-        
+
         try:
             query = "SELECT * FROM user WHERE email = %s AND password = %s"
             values = (email, password)
@@ -44,7 +45,7 @@ class User_Controller():
             if result_check is not None:
                 user_character = [int(result_check[0]), result_check[1]]
                 user_data = {'ID': result_check[0],'Name': result_check[1]}
-                with open('C:/Users/Mauro/Documents/CODE/Proyectos/Hermes/app/static/json/user.json', 'w') as file:
+                with open('app/static/json/user.json', 'w') as file:
                     json.dump(user_data,file, indent=4)
                 return jsonify(user_character)
             else:
@@ -66,7 +67,7 @@ class servers_controller:
         self._description = None
         self._image = None
         self._creator_user = None
-    
+
     def create_server(self, data):
         name = data.get('name')
         description = data.get('description')
@@ -85,7 +86,7 @@ class servers_controller:
             return jsonify("Server creado correctamente")
         except Exception as e:
             return jsonify(f"Error: {e}")
-    
+
     def calling_servers(self):
         try:
             with open('C:/Users/Mauro/Documents/CODE/Proyectos/Hermes/app/static/json/user.json', 'r') as file:
@@ -110,11 +111,11 @@ class ChannelsController:
         self._name = None
         self._description = None
         self._creator_server = None
-    
+
     def create_channels(self, data):
         name = data.get('name')
         description = data.get('description')
-        
+
         if not name and not description:
             return jsonify("Faltan Datos")
 
@@ -191,13 +192,13 @@ class ChatController:
                 json.dump(user_data, file, indent=4)
             return jsonify({"message": "El ID del canal se guardó correctamente"})
         else:
-            return jsonify({"error": "No se capturó el ID del canal"}) 
+            return jsonify({"error": "No se capturó el ID del canal"})
 
     def calling_chats(self):
         try:
             with open('C:/Users/Mauro/Documents/CODE/Proyectos/Hermes/app/static/json/channel.json', 'r') as file:
                 id_channel = json.load(file)
-            
+
             query = "SELECT * FROM chats WHERE creation_channel = %s"
             values = (id_channel["ID_Channel"],)
             data = DatabaseConnection.fetch_all(query, values)
